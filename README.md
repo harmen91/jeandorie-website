@@ -57,7 +57,7 @@ If no `.env` is provided, the port defaults to `3002`. The `docker-compose.yml` 
 services:
   php-site:
     image: php:apache
-    container_name: php-site
+    container_name: jeandorie-website
     restart: unless-stopped
     volumes:
       - ./site:/var/www/html
@@ -81,7 +81,7 @@ Pull the latest changes and restart:
 
 ```bash
 git pull
-docker compose restart php-site
+docker restart jeandorie-website
 ```
 
 ---
