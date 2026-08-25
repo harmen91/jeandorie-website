@@ -32,7 +32,7 @@
               <img class="img-responsive center-block portrait-2 portrait-bg hvr-glow" src="portraits/harmen-3.jpg" alt="">
                 <div class="caption">
                   <h3>Harmen Smit</h3>
-                  <h4>Sound, Animation & Code</h4>
+                  <h4>Sound & Code</h4>
                 </div>
             </div>
           </div>
@@ -42,7 +42,7 @@
               <img class="img-responsive center-block portrait-3 portrait-bg hvr-glow" src="portraits/peter-3.jpg" alt="">
                 <div class="caption">
                   <h3>Péter Illés</h3>
-                  <h4>3D & Allround Creative</h4>
+                  <h4>Frontend Engineer & 3D</h4>
                 </div>
               </div>
             </div>
