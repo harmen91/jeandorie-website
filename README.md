@@ -16,7 +16,7 @@ Mounts a local `site/` folder directly into the official `php:apache` container 
 - A domain or subdomain pointed at your VPS IP
 - Nginx Proxy Manager running on your VPS
 
-> Don't have Nginx Proxy Manager set up yet? Follow this guide first:
+> Setting up nginx proxy manager explained here
 > https://github.com/harmen91/nightscout-docker-simple
 
 ---
@@ -24,8 +24,8 @@ Mounts a local `site/` folder directly into the official `php:apache` container 
 ## Repository Structure
 
 ```
-your-repo/
-├── site/               # Your static PHP website
+jeandorie-website/
+├── site/               # Static PHP jeandorie website
 │   ├── index.php
 │   └── ...
 ├── docker-compose.yml
