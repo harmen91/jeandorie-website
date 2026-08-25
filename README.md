@@ -1,6 +1,6 @@
 # Static PHP Site — Self-Hosted on a Private VPS with Nginx Proxy Manager
 
-A minimal Docker setup for serving a static PHP website on your own VPS, reverse-proxied through Nginx Proxy Manager with automatic SSL via Let's Encrypt.
+A minimal Docker setup for serving my old static PHP portfolio website on a VPS, reverse-proxied through Nginx Proxy Manager with automatic SSL via Let's Encrypt.
 
 ---
 
@@ -43,7 +43,15 @@ git clone https://github.com/yourusername/your-repo.git
 cd your-repo
 ```
 
-**2. Set your port in `docker-compose.yml`**
+**2. Set your port in a `.env` file**
+
+Create a `.env` file in the same folder as `docker-compose.yml`:
+
+```
+PHP_PORT=3002
+```
+
+If no `.env` is provided, the port defaults to `3002`. The `docker-compose.yml` is already configured to use it:
 
 ```yaml
 services:
@@ -54,10 +62,10 @@ services:
     volumes:
       - ./site:/var/www/html
     ports:
-      - "YOUR_PORT:80"
+      - "${PHP_PORT:-3002}:80"
 ```
 
-Replace `YOUR_PORT` with any free port on your VPS (e.g. `3002`).
+
 
 **3. Start the container**
 
@@ -89,7 +97,7 @@ Open the NPM web UI at `http://your-vps-ip:81`, go to **Proxy Hosts → Add Prox
 | Domain Names | `site.yourdomain.com` |
 | Scheme | `http` |
 | Forward Hostname / IP | Your VPS IP address |
-| Forward Port | The port set in `docker-compose.yml` |
+| Forward Port | The port set in `.env` (`PHP_PORT`) |
 | Cache Assets | off |
 | Block Common Exploits | on |
 
@@ -116,7 +124,7 @@ Browser (HTTPS)
 Nginx Proxy Manager :443   -- SSL termination
       |
       v
-php-site container :80     -- mapped to YOUR_PORT on the host
+php-site container :80     -- mapped to PHP_PORT on the host
       |
       v
 ./site/ mounted at /var/www/html

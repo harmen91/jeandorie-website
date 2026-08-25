@@ -6,7 +6,7 @@ services:
     volumes:
       # Mounts the local site/ folder into Apache's web root
       - ./site:/var/www/html
-    # CHANGE THIS PORT NR. PLX EVERY TIME THANK YOU 
-    # Pick any free port — NPM will proxy to it
+    # Create a custom unique port everytime
+    # Create .env file in root of the project containing PHP_PORT=1234 (change 1234)
     ports:
-      - "YOUR_PORT:6942"
+      - "${PHP_PORT:-3002}:80"
